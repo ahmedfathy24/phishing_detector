@@ -7,7 +7,7 @@
 
 PhishGuard v2 is a state-of-the-art phishing detection platform that combines behavioral analysis with machine learning to protect users from malicious web threats. It features a premium "cyber-themed" interface, a robust backend, and a real-time browser extension for seamless protection.
 
-## 🏗️ System Architecture
+##  System Architecture
 PhishGuard v2 follows a **decoupled architecture**, ensuring a clean separation of concerns between the logic engine, the user interface, and the browser integration. 
 
 | Component | Technology Stack | Responsibility |
@@ -16,12 +16,12 @@ PhishGuard v2 follows a **decoupled architecture**, ensuring a clean separation 
 | **Frontend** | HTML5, Vanilla JS, CSS3 | Real-time UI updates, Data visualization, and Local state |
 | **Extension** | Chrome Extensions API, JS | Real-time active tab scanning and seamless browser integration |
 
-## 🧠 Advanced Machine Learning Features
+##  Advanced Machine Learning Features
 
-### 🔍 Core Detection Model
+###  Core Detection Model
 The heart of PhishGuard v2 is a highly trained **Random Forest** classifier. To achieve high accuracy, the system relies on a custom-built feature extractor that evaluates **41 distinct numerical features** from any given URL. This deep inspection covers structural anomalies, lexical characteristics, and suspicious token combinations to effectively differentiate between benign and malicious links.
 
-### 🛡️ Lookalike / Typosquatting Detection Engine
+###  Lookalike / Typosquatting Detection Engine
 A core strength of PhishGuard v2 is its dedicated engine for detecting "Lookalike" domains used in brand impersonation attacks. The system employs a **normalization logic** that strips away common obfuscation techniques:
 
 - **Character Normalization**: The engine maps visual similarities to their likely intended characters:
@@ -31,12 +31,12 @@ A core strength of PhishGuard v2 is its dedicated engine for detecting "Lookalik
 - **Fuzzy Matching**: Uses `SequenceMatcher` to calculate similarity scores between normalized domains and registered brand labels.
 - **Smart Logic**: Legitimate brand domains (e.g., `paypal.com`) are correctly identified as safe, while malicious variations (e.g., `paypa1.com`) trigger a high-risk alert.
 
-## 🧩 Real-Time Browser Extension
+##  Real-Time Browser Extension
 PhishGuard v2 extends its protection directly to your browser. The custom-built extension communicates seamlessly with the local FastAPI backend to provide:
 - **Real-Time Automated Shield**: Intercepts browser navigations globally to instantly halt malicious connections.
 - **Intelligent Fallback**: Re-routes malicious attempts securely using the `webNavigation` API directly to a local, isolated warning page (`blocked.html`).
 
-## 📊 Dynamic Dataset Explorer & Local History
+##  Dynamic Dataset Explorer & Local History
 - **API-Driven Explorer**: The frontend fetches the `dataset.csv` directly from the backend via a REST API endpoint (`/api/dataset`), ensuring the UI always reflects the current training set with real-time filtering.
 - **Local Scan History**: Utilizes **Browser LocalStorage** to maintain a persistent, private record of scan results across browser sessions without the need for a database.
 
