@@ -689,3 +689,66 @@
   @keyframes fadeUp   { from { opacity: 0; transform: translateY(12px);  } to { opacity: 1; transform: translateY(0); } }
   @keyframes spin { to { transform: rotate(360deg); } }
   @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .top-nav {
+      flex-direction: column;
+      padding: 14px 16px;
+      gap: 12px;
+    }
+    .nav-tabs {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .nav-tab {
+      padding: 6px 12px;
+      font-size: 10px;
+    }
+    .input-row {
+      flex-direction: column;
+    }
+    button.scan-btn {
+      width: 100%;
+    }
+    .result-header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 16px;
+    }
+    .confidence-wrap {
+      min-width: 100%;
+      align-items: flex-start;
+    }
+    .confidence-bar {
+      width: 100%;
+    }
+    .result-body {
+      padding: 16px;
+    }
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+    .stats-row {
+      grid-template-columns: 1fr;
+    }
+    .controls {
+      flex-wrap: wrap;
+    }
+    .search-input {
+      width: 100%;
+      flex: none;
+    }
+    .filter-btn {
+      flex: 1;
+      text-align: center;
+      padding: 8px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    th, td {
+      padding: 10px 12px;
+      font-size: 11px;
+    }
+  }

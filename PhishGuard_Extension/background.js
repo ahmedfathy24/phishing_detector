@@ -15,6 +15,16 @@ chrome.webNavigation.onBeforeNavigate.addListener(async (details) => {
     return;
   }
 
+  // Local development whitelist to prevent friendly fire
+  try {
+    const urlObj = new URL(url);
+    if (urlObj.hostname === 'localhost' || urlObj.hostname === '127.0.0.1') {
+      return;
+    }
+  } catch (e) {
+    // Ignore invalid URLs
+  }
+
   const tabId = details.tabId;
   
   if (scanningTabs.has(tabId)) return;
